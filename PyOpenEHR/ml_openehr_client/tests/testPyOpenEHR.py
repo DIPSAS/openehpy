@@ -1,5 +1,5 @@
 import unittest
-import PyOpenEHR
+import ml_openehr_client.PyOpenEHR as PyOpenEHR
 
 class Test_testPyOpenEHR(unittest.TestCase):
 

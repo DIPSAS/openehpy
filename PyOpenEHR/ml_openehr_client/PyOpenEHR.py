@@ -12,3 +12,4 @@ class PyOpenEHR:
         return response.json() if response.ok else raise_for_status()
 
 if __name__ == '__main__':
+    print("hei")

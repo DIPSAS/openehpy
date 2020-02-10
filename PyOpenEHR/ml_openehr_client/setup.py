@@ -4,7 +4,7 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="ml-openehr-py-client",
+    name="ml-openehr-client",
     version="0.0.1",
     author="S. Falkflaug | F. Bentzen | C. Olsen | A. Sølvberg",
     author_email="stfa@dips.no",

@@ -3,3 +3,6 @@
 /PyOpenEHR/__pycache__
 /.vs/PyOpenEHR/v16/TestStore/0
 /.vs/PyOpenEHR/v16
+/PyOpenEHR/ml_openehr_client/tests/__pycache__
+/PyOpenEHR/ml_openehr_client/__pycache__
+/.vs

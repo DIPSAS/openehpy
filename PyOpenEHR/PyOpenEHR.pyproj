@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>cb55e612-0371-42d4-9840-bf310c21547c</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>ml-openehr-py-client\PyOpenEHR.py</StartupFile>
+    <StartupFile>ml_openehr_client\PyOpenEHR.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -13,7 +13,7 @@
     <RootNamespace>PyOpenEHR</RootNamespace>
     <TestFramework>unittest</TestFramework>
     <UnitTestPattern>test*.py</UnitTestPattern>
-    <UnitTestRootDirectory>.</UnitTestRootDirectory>
+    <UnitTestRootDirectory>ml_openehr_client\tests\</UnitTestRootDirectory>
     <InterpreterId>MSBuild|env|$(MSBuildProjectFullPath)</InterpreterId>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
@@ -25,14 +25,14 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="ml-openehr-py-client\setup.py">
+    <Compile Include="ml_openehr_client\setup.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="ml-openehr-py-client\__init__.py">
+    <Compile Include="ml_openehr_client\tests\__init__.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="ml-openehr-py-client\PyOpenEHR.py" />
-    <Compile Include="ml-openehr-py-client\testPyOpenEHR.py">
+    <Compile Include="ml_openehr_client\PyOpenEHR.py" />
+    <Compile Include="ml_openehr_client\tests\testPyOpenEHR.py">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -48,10 +48,11 @@
     </Interpreter>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="ml-openehr-py-client\" />
+    <Folder Include="ml_openehr_client\" />
+    <Folder Include="ml_openehr_client\tests\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ml-openehr-py-client\README.md" />
+    <Content Include="README.md" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
