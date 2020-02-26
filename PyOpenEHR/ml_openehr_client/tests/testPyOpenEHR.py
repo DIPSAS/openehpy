@@ -16,7 +16,7 @@ class Test_testPyOpenEHR(unittest.TestCase):
         "o/data[at0002]/events[at0003]/data[at0001]/items[at0004]/value/units AS Unit "
         "FROM COMPOSITION c " 
         "CONTAINS OBSERVATION o[openEHR-EHR-OBSERVATION.body_weight.v1] "
-        "ORDER BY o/data[at0002]/origin/value DESC")
+        "ORDER BY o/data[at0002]/origin/value DESC LIMIT 5")
         response = self.connection.query(aql);
         self.assertIsInstance(self, response, pandas.DataFrame)
 

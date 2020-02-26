@@ -17,6 +17,3 @@ class PyOpenEHR:
         for column in resultset['columns']:
             columnNames.append(column['name'])
         return pandas.DataFrame(resultset['rows'], columns=columnNames)
-
-if __name__ == '__main__':
-    print("hei")
