@@ -1,15 +1,22 @@
 import requests
+import pandas
 
 class PyOpenEHR:
-    def __init__(self, EHRStoreURL, responseEncoding = "utf-8-sig", verifySSLConnection = True):
+    def __init__(self, EHRStoreURL, responseEncoding = 'utf-8-sig', verifySSLConnection = True):
         self.EHRStoreURL = EHRStoreURL
         self.responseEncoding = responseEncoding
         self.verifySSLConnection = verifySSLConnection
 
     def query(self, query, includeTags = []):
-        response = requests.get(self.EHRStoreURL + "/openehr/v1/query/aql/?q=" + query, verify = self.verifySSLConnection)
+        response = requests.get(self.EHRStoreURL + '/openehr/v1/query/aql/?q=' + query, verify = self.verifySSLConnection)
         response.encoding = self.responseEncoding
-        return response.json() if response.ok else raise_for_status()
+        return self.ResultsetAsDataFrame(response.json()) if response.ok else response.json()
+
+    def ResultsetAsDataFrame(self, resultset):
+        columnNames = []
+        for column in resultset['columns']:
+            columnNames.append(column['name'])
+        return pandas.DataFrame(resultset['rows'], columns=columnNames)
 
 if __name__ == '__main__':
     print("hei")
