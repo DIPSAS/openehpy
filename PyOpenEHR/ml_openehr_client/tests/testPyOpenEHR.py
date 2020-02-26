@@ -17,8 +17,8 @@ class Test_testPyOpenEHR(unittest.TestCase):
         "FROM COMPOSITION c " 
         "CONTAINS OBSERVATION o[openEHR-EHR-OBSERVATION.body_weight.v1] "
         "ORDER BY o/data[at0002]/origin/value DESC LIMIT 5")
-        response = self.connection.query(aql);
-        self.assertIsNotNone(response);
+        response = self.connection.query(aql)
+        self.assertIsNotNone(response)
 
 if __name__ == '__main__':
     unittest.main()

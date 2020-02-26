@@ -8,9 +8,9 @@ class PyOpenEHR:
         self.verifySSLConnection = verifySSLConnection
 
     def query(self, query, includeTags = []):
-        response = requests.get(self.EHRStoreURL + '/openehr/v1/query/aql/?q=' + query, verify = self.verifySSLConnection)
+        response = requests.post(self.EHRStoreURL + '/openehr/v1/query/aql/', json = { 'q': query }, verify = self.verifySSLConnection)
         response.encoding = self.responseEncoding
-        return self.ResultsetAsDataFrame(response.json()) if response.ok else response.json()
+        return self.ResultsetAsDataFrame(response.json()) if response.ok else response
 
     def ResultsetAsDataFrame(self, resultset):
         columnNames = []
