@@ -16,4 +16,4 @@ class PyOpenEHR:
         columnNames = []
         for column in resultset['columns']:
             columnNames.append(column['name'])
-        return pandas.DataFrame(resultset['rows'], columns=columnNames)
+        return pandas.DataFrame(resultset['rows'], columns=columnNames) if 'rows' in resultset else resultset

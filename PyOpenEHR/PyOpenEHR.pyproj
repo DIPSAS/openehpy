@@ -52,6 +52,7 @@
     <Folder Include="ml_openehr_client\tests\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ml_openehr_client\README.md" />
     <Content Include="README.md" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
