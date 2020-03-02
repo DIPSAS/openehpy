@@ -4,7 +4,7 @@ import ml_openehr_client.PyOpenEHR as PyOpenEHR
 class Test_testPyOpenEHR(unittest.TestCase):
 
     def setUp(self):
-        self.connection = PyOpenEHR.PyOpenEHR("https://vt-tb-a-f-2.dips.local:4443", "utf-8-sig", False)
+        self.connection = PyOpenEHR.PyOpenEHR("https://vt-selecta-b.dips.local:4443", "utf-8-sig", False)
 
     def tearDown(self):
         self.connection = ""
