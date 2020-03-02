@@ -5,5 +5,8 @@
 /.vs/PyOpenEHR/v16
 /PyOpenEHR/ml_openehr_client/tests/__pycache__
 /PyOpenEHR/ml_openehr_client/__pycache__
+/PyOpenEHR/ml_openehr_client/build
+/PyOpenEHR/ml_openehr_client/dist
+/PyOpenEHR/ml_openehr_client/ml_openehr_client.egg-info
 /.vs
 /PyOpenEHR/PyOpenEHR - Shortcut.lnk
