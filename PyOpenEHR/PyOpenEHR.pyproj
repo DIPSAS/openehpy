@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>cb55e612-0371-42d4-9840-bf310c21547c</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>ml_openehr_client\PyOpenEHR.py</StartupFile>
+    <StartupFile>ml_openehr_client\PyOpenEHR\PyOpenEHR.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -25,13 +25,16 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="ml_openehr_client\PyOpenEHR\__init__.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="ml_openehr_client\setup.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="ml_openehr_client\tests\__init__.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="ml_openehr_client\PyOpenEHR.py" />
+    <Compile Include="ml_openehr_client\PyOpenEHR\PyOpenEHR.py" />
     <Compile Include="ml_openehr_client\tests\testPyOpenEHR.py">
       <SubType>Code</SubType>
     </Compile>
@@ -49,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ml_openehr_client\" />
+    <Folder Include="ml_openehr_client\PyOpenEHR\" />
     <Folder Include="ml_openehr_client\tests\" />
   </ItemGroup>
   <ItemGroup>
