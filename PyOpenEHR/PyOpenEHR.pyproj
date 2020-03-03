@@ -31,11 +31,11 @@
     <Compile Include="ml_openehr_client\setup.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="ml_openehr_client\tests\__init__.py">
+    <Compile Include="tests\__init__.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="ml_openehr_client\PyOpenEHR\PyOpenEHR.py" />
-    <Compile Include="ml_openehr_client\tests\testPyOpenEHR.py">
+    <Compile Include="tests\testPyOpenEHR.py">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -53,7 +53,7 @@
   <ItemGroup>
     <Folder Include="ml_openehr_client\" />
     <Folder Include="ml_openehr_client\PyOpenEHR\" />
-    <Folder Include="ml_openehr_client\tests\" />
+    <Folder Include="tests\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="ml_openehr_client\README.md" />
