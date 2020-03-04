@@ -4,7 +4,7 @@ PyOpenEHR is a simple *openEHR* endpoint interface intended to make results of A
 ### Usage
 To use PyOpenEHR, simply create an instance the class `PyOpenEHR`.
 
-**Example of makeing a connection instance:**
+**Example of making a connection instance:**
 ```
 connection = PyOpenEHR("http*://openehr-endpoint-url", "utf-8-sig", False)
 ```

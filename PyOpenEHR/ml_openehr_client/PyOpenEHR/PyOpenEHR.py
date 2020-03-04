@@ -7,7 +7,7 @@ class PyOpenEHR:
         self.responseEncoding = responseEncoding
         self.verifySSLConnection = verifySSLConnection
 
-    def query(self, query, includeTags = []):
+    def query(self, query):
         response = requests.post(self.EHRStoreURL + '/openehr/v1/query/aql/', json = { 'q': query }, verify = self.verifySSLConnection)
         response.encoding = self.responseEncoding
         return self.ResultsetAsDataFrame(response.json()) if response.ok else response
