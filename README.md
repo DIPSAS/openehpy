@@ -38,7 +38,7 @@ print(response)
 If you want to disable SSL connection verification you can pass in `False`
 
 ```
-openehr_server = openehpy("http*://openehr-endpoint-url", "utf-8-sig", False)
+openehr_server = openehpy("http://openeh-server", "utf-8-sig", False)
 ```
 
 when you create the openEHR server object for querying. 
@@ -46,7 +46,7 @@ when you create the openEHR server object for querying.
 
 # Build and install 
 
-You can build and install the `openehpy` package with 
+You can build and install the `openehpy` package locally with 
 
 ```
     python3 -m pip install .
