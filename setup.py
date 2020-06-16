@@ -4,14 +4,14 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="ml-openehr-client",
+    name="openehpy",
     version="0.0.1",
-    author="S. Falkflaug | F. Bentzen | C. Olsen | A. Sølvberg",
-    author_email="stfa@dips.no",
-    description="A simple Python-OpenEHR connection framework",
+    author="Steinar Falkflaug | Fredrik Bentzen | Christer Olsen | Adrian Sølvberg | Bjørn Fjukstad",
+    author_email="bfj@dips.no",
+    description="A package for retrieving data from an openEHR server",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://dipscloud.visualstudio.com/DIPS_SL/_git/ML.OpenEHR.Py.Client",
+    url="https://github.com/dipsas/openehpy",
     packages=setuptools.find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",

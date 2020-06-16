@@ -1,7 +1,7 @@
 import requests
 import pandas
 
-class PyOpenEHR:
+class server_connection:
     def __init__(self, EHRStoreURL, responseEncoding = 'utf-8-sig', verifySSLConnection = True):
         self.EHRStoreURL = EHRStoreURL
         self.responseEncoding = responseEncoding
