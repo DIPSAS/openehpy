@@ -10,8 +10,8 @@ To use openehpy, simply import it and use it from a script or similar like so
 ```python
 from openehpy import client
 
-openehr_server = client.server_connection("http://openehr-server", "utf-8-sig")
-aql = "
+openehr_server = client.server_connection("https://openehr-server","utf-8-sig")
+aql = """
 select
     c/content[openEHR-EHR-OBSERVATION.blood_pressure.v1]/data[at0001]/events[at0006]/time/value as datetime,
     c/content[openEHR-EHR-OBSERVATION.blood_pressure.v1]/data[at0001]/events[at0006]/data[at0003]/items[at0004]/value/magnitude AS systolic,
@@ -19,9 +19,7 @@ select
 from
     composition c
     contains observation o[openEHR-EHR-OBSERVATION.blood_pressure.v1]
-limit 5"
-
-select c from composition c limit 5"
+limit 5"""
 
 response = openehr_server.query(aql);
 
@@ -38,7 +36,7 @@ print(response)
 If you want to disable SSL connection verification you can pass in `False`
 
 ```
-openehr_server = openehpy("http://openeh-server", "utf-8-sig", False)
+openehr_server = client.server_connection("https://openehr-server","utf-8-sig", False)
 ```
 
 when you create the openEHR server object for querying. 
@@ -46,8 +44,10 @@ when you create the openEHR server object for querying.
 
 # Build and install 
 
-You can build and install the `openehpy` package locally with 
+To build and install this package simply run 
 
 ```
     python3 -m pip install .
 ```
+
+in the root folder of this repository.

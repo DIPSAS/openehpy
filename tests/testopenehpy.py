@@ -1,11 +1,11 @@
 import unittest
-import ml_openehr_client.PyOpenEHR.PyOpenEHR as PyOpenEHR
+from openehpy import client
 
 class Test_testPyOpenEHR(unittest.TestCase):
 
     def setUp(self):
-        openEHREndpoint = ""
-        self.connection = PyOpenEHR.PyOpenEHR(openEHREndpoint, "utf-8-sig", False)
+        openEHREndpoint = "https://localhost:4443"
+        self.connection = client.server_connection(openEHREndpoint,"utf-8-sig", False)
 
     def tearDown(self):
         self.connection = ""
