@@ -26,5 +26,4 @@ class server_connection:
         return pandas.DataFrame(resultset['rows'], columns=columnNames) if 'rows' in resultset else resultset
     
     def remove_control_characters(s):
-        new_string = "".join(ch for ch in s if unicodedata.category(ch)[0]!="C")
-        return " ".join(new_string.split());
+        return "".join(ch for ch in s if unicodedata.category(ch)[0]!="C")
