@@ -13,15 +13,15 @@ from openehpy import client
 openehr_server = client.server_connection("https://openehr-server","utf-8-sig")
 aql = """
 select
-    c/content[openEHR-EHR-OBSERVATION.blood_pressure.v1]/data[at0001]/events[at0006]/time/value as datetime,
-    c/content[openEHR-EHR-OBSERVATION.blood_pressure.v1]/data[at0001]/events[at0006]/data[at0003]/items[at0004]/value/magnitude AS systolic,
-    c/content[openEHR-EHR-OBSERVATION.blood_pressure.v1]/data[at0001]/events[at0006]/data[at0003]/items[at0005]/value/magnitude AS diastolic
+    o/data[at0001]/events[at0006]/time/value as datetime,
+    o/data[at0001]/events[at0006]/data[at0003]/items[at0004]/value/magnitude AS systolic,
+    o/data[at0001]/events[at0006]/data[at0003]/items[at0005]/value/magnitude AS diastolic
 from
     composition c
-    contains observation o[openEHR-EHR-OBSERVATION.blood_pressure.v1]
+        contains observation o[openEHR-EHR-OBSERVATION.blood_pressure.v1]
 limit 5"""
 
-response = openehr_server.query(aql);
+response = openehr_server.query(aql)
 
 print(response)
 
@@ -41,6 +41,11 @@ openehr_server = client.server_connection("https://openehr-server","utf-8-sig", 
 
 when you create the openEHR server object for querying. 
 
+If you want to add headers you can pass in `headers = {"key":"value"}`
+
+```
+openehr_server = client.server_connection("https://openehr-server", headers = {"key":"value"})
+```
 
 # Build and install 
 
