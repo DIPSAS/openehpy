@@ -4,8 +4,8 @@ from openehpy import client
 class Test_testPyOpenEHR(unittest.TestCase):
 
     def setUp(self):
-        openEHREndpoint = "https://localhost:4443"
-        self.connection = client.server_connection(openEHREndpoint,"utf-8-sig", False)
+        openEHREndpoint = "https://vt-diag-srv01.dips.local:4443"
+        self.connection = client.server_connection(openEHREndpoint,"utf-8-sig", verifySSLConnection = False)
 
     def tearDown(self):
         self.connection = ""
