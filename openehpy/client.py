@@ -3,19 +3,22 @@ import pandas
 import unicodedata
 
 class server_connection:
-    def __init__(self, EHRStoreURL, responseEncoding = 'utf-8-sig',headers = None, verifySSLConnection = True):
+    def __init__(self, EHRStoreURL, responseEncoding = 'utf-8-sig',headers = None, verifySSLConnection = True,
+                auth=('user','pass')):
         self.EHRStoreURL = EHRStoreURL
         self.responseEncoding = responseEncoding
         self.verifySSLConnection = verifySSLConnection
         self.headers = headers
+        self.auth = auth
 
     def query(self, query):
         response = requests.post(
           self.EHRStoreURL + '/openehr/v1/query/aql/',
           json = { 'q': server_connection.remove_control_characters(query) },
           verify = self.verifySSLConnection,
-          headers = self.headers
-          )
+          headers = self.headers,
+          auth = self.auth
+        )
         response.encoding = self.responseEncoding
         return self.ResultsetAsDataFrame(response.json()) if response.ok else response
 
