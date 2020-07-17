@@ -21,5 +21,29 @@ class Test_testPyOpenEHR(unittest.TestCase):
         response = self.connection.query(aql)
         self.assertIsNotNone(response)
 
+    def test_Query_ReturnsResult_with_unsanitized_aql(self):
+        aql = ("""                         select
+    o/data[at0001]/events[at0006]/time/value as datetime,
+    o/data[at0001]/events[at0006]/data[at0003]/items[at0004]/value/magnitude AS systolic,
+    o/data[at0001]/events[at0006]/data[at0003]/items[at0005]/value/magnitude AS diastolic
+from                              
+    composition c
+                                         contains observation o[openEHR-EHR-OBSERVATION.blood_pressure.v1]
+limit 5""")
+        response = self.connection.query(aql)
+        self.assertIsNotNone(response)
+
+    def test_Query_ReturnsResult_with_unsanitized_aqlV2(self):
+        aql = ("""select
+    o/data[at0001]/events[at0006]/time/value as datetime,
+    o/data[at0001]/events[at0006]/data[at0003]/items[at0004]/value/magnitude AS systolic,
+    o/data[at0001]/events[at0006]/data[at0003]/items[at0005]/value/magnitude AS diastolic
+from
+    composition c
+        contains observation o[openEHR-EHR-OBSERVATION.blood_pressure.v1]
+limit 5""")
+        response = self.connection.query(aql)
+        self.assertIsNotNone(response)
+
 if __name__ == '__main__':
     unittest.main()
