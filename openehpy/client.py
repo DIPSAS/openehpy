@@ -4,7 +4,7 @@ import unicodedata
 
 class server_connection:
     def __init__(self, EHRStoreURL, responseEncoding = 'utf-8-sig',headers = None, verifySSLConnection = True,
-                auth=('user','pass')):
+                auth=None):
         self.EHRStoreURL = EHRStoreURL
         self.responseEncoding = responseEncoding
         self.verifySSLConnection = verifySSLConnection
