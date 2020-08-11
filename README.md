@@ -46,6 +46,11 @@ If you want to add headers you can pass in `headers = {"key":"value"}`
 ```
 openehr_server = client.server_connection("https://openehr-server", headers = {"key":"value"})
 ```
+If you want to add auth you can pass in ` auth=('user','pass')`
+
+```
+openehr_server = client.server_connection("https://openehr-server", auth=('user','pass'))
+```
 
 # Build and install 
 
