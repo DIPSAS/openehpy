@@ -33,10 +33,10 @@ print(response)
 # 4  2016-06-02T15:28:25.247+02:00     140.0       80.0
 ```
 
-If you want to disable SSL connection verification you can pass in `False`
+If you want to disable SSL connection verification you can pass in `verifySSLConnection = False`
 
 ```
-openehr_server = client.server_connection("https://openehr-server","utf-8-sig", False)
+openehr_server = client.server_connection("https://openehr-server","utf-8-sig", verifySSLConnection = False)
 ```
 
 when you create the openEHR server object for querying. 
